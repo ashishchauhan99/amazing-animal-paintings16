@@ -12,6 +12,8 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
+  filteredProducts: Product[] = [];
+  sortOrder: string = "";
 
   constructor(private productService: ProductService,
     private cartService: CartService,
@@ -20,18 +22,41 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts().subscribe(data => {
       this.products = data;
+      this.filteredProducts = data;
     });
   }
 
   addToCart(product: Product): void {
     this.cartService.addToCart(product).subscribe({
       next: () => {
-                this.snackBar.open("Product added to cart!", "", {
-                  duration: 2000,
-                  horizontalPosition: "center",
-                  verticalPosition: "top"
-                });
+        this.snackBar.open("Product added to cart!", "", {
+          duration: 1000,
+          horizontalPosition: "center",
+          verticalPosition: "top"
+        });
       },
     });
+  }
+
+  applyFilter(event: Event) {
+    let searchTerm = (event.target as HTMLInputElement).value;
+    searchTerm = searchTerm.toLowerCase();
+
+    this.filteredProducts = this.products.filter(
+      product => product.name.toLowerCase().includes(searchTerm)
+    );
+
+    this.sortProducts(this.sortOrder);
+  }
+
+  sortProducts(sortValue: string) {
+    this.sortOrder = sortValue;
+
+    if (this.sortOrder === "priceLowHigh") {
+      this.filteredProducts.sort((a, b) => a.price - b.price);
+    }
+    else {
+      this.filteredProducts.sort((a, b) => b.price - a.price);
+    }
   }
 }
