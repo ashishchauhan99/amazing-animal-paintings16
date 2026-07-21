@@ -5,7 +5,7 @@
     </mat-form-field>
 
     <mat-form-field class="ms-5">      
-        <mat-select (selectionChange)="sortProducts($event.value)">
+        <mat-select (selectionChange)="sortProducts($event.value)" placeholder="sort">
             <mat-option value="priceLowHigh">Price: Low to High</mat-option>
             <mat-option value="priceHighLow">Price: High to Low</mat-option>
         </mat-select>
