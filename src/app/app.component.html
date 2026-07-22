@@ -1,8 +1,15 @@
-
 <mat-toolbar color="warn">
   <mat-toolbar-row>
     <a mat-button href="/products">Products</a>
     <a mat-button href="/cart">Cart</a>
+    <span class="toolbar-spacer"></span>
+    <button mat-icon-button routerLink="/cart" aria-label="Shopping Cart">
+      <mat-icon [matBadge]="cartItemCount" 
+                matBadgeColor="accent" 
+                [matBadgeHidden]="cartItemCount === 0">
+        shopping_cart
+      </mat-icon>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
