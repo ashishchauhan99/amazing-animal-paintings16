@@ -59,4 +59,27 @@ export class ProductListComponent implements OnInit {
       this.filteredProducts.sort((a, b) => b.price - a.price);
     }
   }
+
+  toggleSelect(product: Product): void {
+    // 1. Toggle boolean true <-> false
+    product.selected = !product.selected;
+
+    if (product.selected) {
+       this.snackBar.open("Product added to cart", "", {
+          duration: 1000,
+          horizontalPosition: "center",
+          verticalPosition: "top"
+        });
+      // Logic for when the item gets selected
+     // this.addToCart(product);
+    } else {
+       this.snackBar.open("Product removed from the cart", "", {
+          duration: 1000,
+          horizontalPosition: "center",
+          verticalPosition: "top"
+        });
+      // Logic for when the item gets deselected
+      //this.removeFromCart(product);
+    }
+  }
 }

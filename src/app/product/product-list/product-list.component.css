@@ -1,3 +1,13 @@
 .product-card {
   max-width: 400px;
+  cursor: pointer;
+  /*This enables smooth animations whenever the card’s CSS properties change (such as when adding the .selected class, changing background color, or adding a hover effect).*/
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styles applied when card is clicked (selected) */
+.product-card.selected {
+  border: 2px solid #3f51b5; /* Primary color border */
+  background-color: #f0f3ff;  /* Subtle background highlight */
+  box-shadow: 0 4px 10px rgba(63, 81, 181, 0.3); /* Soft shadow */
 }
