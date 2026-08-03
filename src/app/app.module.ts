@@ -11,6 +11,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+import { StoreModule } from '@ngrx/store';
+import { Product } from './models/product';
+import { AppState } from './app.store';
+import { ProductReducer } from './product/store/product.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -26,7 +34,11 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSidenavModule,
+    MatListModule,
+    StoreModule.forRoot<AppState>({products: ProductReducer}),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]

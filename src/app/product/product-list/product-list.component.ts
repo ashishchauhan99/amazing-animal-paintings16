@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
 import { Product } from 'src/app/models/product';
 import { ProductService } from '../product.service';
 import { CartService } from 'src/app/cart/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { AppState } from 'src/app/app.store';
+import { AddProduct, RemoveProduct } from '../store/product.action';
 
 @Component({
   selector: 'app-product-list',
@@ -17,6 +20,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService: ProductService,
     private cartService: CartService,
+    private store: Store<AppState>,
     private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -65,6 +69,9 @@ export class ProductListComponent implements OnInit {
     product.selected = !product.selected;
 
     if (product.selected) {
+
+      this.store.dispatch(AddProduct(product));
+
        this.snackBar.open("Product added to cart", "", {
           duration: 1000,
           horizontalPosition: "center",
@@ -73,6 +80,9 @@ export class ProductListComponent implements OnInit {
       // Logic for when the item gets selected
      // this.addToCart(product);
     } else {
+      
+      this.store.dispatch(RemoveProduct({productId: product.id}));
+
        this.snackBar.open("Product removed from the cart", "", {
           duration: 1000,
           horizontalPosition: "center",

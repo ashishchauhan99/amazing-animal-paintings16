@@ -4,12 +4,13 @@
     <a mat-button href="/cart">Cart</a>
     <span class="toolbar-spacer"></span>
     <button mat-icon-button routerLink="/cart" aria-label="Shopping Cart">
-      <mat-icon [matBadge]="cartItemCount" 
+      <mat-icon [matBadge]="productCount$ | async" 
                 matBadgeColor="warn" 
-                [matBadgeHidden]="cartItemCount === 0">
+                [matBadgeHidden]="(productCount$ | async) === 0">
         shopping_cart
       </mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
+
 <router-outlet></router-outlet>
