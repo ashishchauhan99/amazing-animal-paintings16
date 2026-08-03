@@ -5,6 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Examples
 - **Adding angular material**
 - **using mackoon**
+- **Obserables**
+- **HTTP request**
+- **NgRx**
 
 ## Development server
 
