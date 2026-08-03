@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { AddProduct, RemoveProduct } from './product.action';
+import { AddProduct, ClearProduct, RemoveProduct } from './product.action';
 import { Product } from 'src/app/models/product';
 
 export const initialState: Product[] = [];
@@ -10,7 +10,10 @@ export const ProductReducer = createReducer(
     on(AddProduct, (state, newProduct) => [...state, newProduct]),
 
     // Handle RemoveProduct action
-    on(RemoveProduct, (state, { productId }) => state.filter(p => p.id !== productId))
+    on(RemoveProduct, (state, { productId }) => state.filter(p => p.id !== productId)),
+
+    //Clear products
+    on(ClearProduct, (state) => []),
 )
 
 // youu could also do the following if you want to keep Product[] in an wrapper

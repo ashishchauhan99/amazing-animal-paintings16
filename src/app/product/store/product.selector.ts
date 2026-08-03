@@ -10,3 +10,8 @@ export const selectProductsCount = createSelector(
   selectProducts,
   (products: Product[]) => products.length
 );
+
+export const selectCartTotalPrice = createSelector(
+  selectProducts,
+  (products: Product[]) => products.reduce((total, item) => total + item.price, 0)
+);

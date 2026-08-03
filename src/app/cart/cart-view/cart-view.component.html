@@ -1,6 +1,6 @@
 <div class="container mt-5">
-    <h1>Your Cart</h1>
-
+    
+    <h1>Products from Makoon</h1>
     <mat-list>
         <mat-list-item *ngFor="let cartItem of cartItems">
             <span matListItemTitle>{{cartItem.name}}</span>
@@ -9,6 +9,22 @@
         <mat-list-item>
             <span matListItemTitle><b>Total Price: </b></span>
             <span matListItemLine>{{totalPrice | currency:'USD'}}</span>
+        </mat-list-item>
+    </mat-list>
+
+    <mat-divider></mat-divider>
+     
+    <h1 class="mt-3">Products from Store</h1>
+    <h2>Total {{cartProductCount$ | async}} items in cart</h2>
+    
+    <mat-list>
+        <mat-list-item *ngFor="let cartItem of cartProducts$ | async">
+            <span matListItemTitle>{{cartItem.name}}</span>
+            <span matListItemLine>{{cartItem.price | currency:'USD'}}</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle><b>Total Price: </b></span>
+            <span matListItemLine>{{cartTotalPrice$ | async | currency:'USD'}}</span>
         </mat-list-item>
     </mat-list>
 
