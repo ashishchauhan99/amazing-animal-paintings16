@@ -3,8 +3,8 @@ import { Product } from 'src/app/models/product';
 import { CartService } from '../cart.service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectProducts, selectProductsCount, selectCartTotalPrice } from 'src/app/product/store/product.selector';
-import { ClearProduct, RemoveProduct } from 'src/app/product/store/product.action';
+import { selectProducts, selectProductsCount, selectCartTotalPrice } from 'src/app/features/product/store/product.selector';
+import { ClearProduct, RemoveProduct } from 'src/app/features/product/store/product.action';
 
 @Component({
   selector: 'app-cart-view',

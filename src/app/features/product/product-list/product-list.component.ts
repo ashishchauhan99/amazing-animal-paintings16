@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Product } from 'src/app/models/product';
 import { ProductService } from '../product.service';
-import { CartService } from 'src/app/cart/cart.service';
+import { CartService } from 'src/app/features/cart/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { AppState } from 'src/app/app.store';
 import { AddProduct, RemoveProduct } from '../store/product.action';
