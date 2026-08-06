@@ -1,8 +1,10 @@
 import { createAction, props } from '@ngrx/store';
-import { User } from 'src/app/models/user';
+import { User } from 'src/app/features/user/model/user';
+import { Credential } from '../../login/model/credential';
 
 // Dispatched by Login Component after receiving auth token
-export const Login= createAction('[Auth] Login');
+export const Login= createAction('[Auth] Login',props<{credential:Credential}>());
+
 
 // Dispatched by the Effect once user profile data is fetched from backend
 export const LoadUserProfileSuccess = createAction(

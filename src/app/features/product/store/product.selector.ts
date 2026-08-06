@@ -1,6 +1,6 @@
 // product.selectors.ts
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Product } from 'src/app/models/product';
+import { Product } from 'src/app/features/product/model/product';
 
 // 1. Grab JUST the 'products' slice registered in StoreModule.forFeature('products', ...)
 export const selectProducts = createFeatureSelector<Product[]>('products');

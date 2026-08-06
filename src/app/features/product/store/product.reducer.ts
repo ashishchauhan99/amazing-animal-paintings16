@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { AddProduct, ClearProduct, RemoveProduct } from './product.action';
-import { Product } from 'src/app/models/product';
+import { Product } from 'src/app/features/product/model/product';
 
 export const initialState: Product[] = [];
 

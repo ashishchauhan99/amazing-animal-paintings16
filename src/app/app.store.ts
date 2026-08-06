@@ -1,5 +1,5 @@
-import { Product } from "./models/product";
-import { User } from "./models/user";
+import { Product } from "./features/product/model/product";
+import { User } from "./features/user/model/user";
 import { UserAuthState } from "./features/user/store/user.reducer";
 
 export interface AppState {

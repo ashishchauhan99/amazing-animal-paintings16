@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Product } from 'src/app/models/product';
+import { Product } from 'src/app/features/product/model/product';
 import { ProductService } from '../product.service';
 import { CartService } from 'src/app/features/cart/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar'
