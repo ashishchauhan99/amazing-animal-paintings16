@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { UserViewComponent } from './user-view/user-view.component';
 
-import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthReducer } from './store/user.reducer';
+import { StoreModule } from '@ngrx/store';
 import { UserEffects } from './store/user.effect';
-import { AppState } from 'src/app/app.store';
+import { AuthReducer } from './store/user.reducer';
 
 
 

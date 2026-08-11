@@ -4,7 +4,6 @@ import { Product } from 'src/app/features/product/model/product';
 import { ProductService } from '../product.service';
 import { CartService } from 'src/app/features/cart/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar'
-import { AppState } from 'src/app/app.store';
 import { AddProduct, RemoveProduct } from '../store/product.action';
 
 @Component({
@@ -20,7 +19,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService: ProductService,
     private cartService: CartService,
-    private store: Store<AppState>,
+    private store: Store,
     private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {

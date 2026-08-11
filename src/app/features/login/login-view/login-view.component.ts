@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/app.store';
 import { Login } from '../../user/store/user.action';
 import { UserService } from '../../user/user.service';
 import { User } from '../../user/model/user';
@@ -17,7 +16,7 @@ export class LoginViewComponent implements OnInit{
   loginForm: FormGroup = new FormGroup({});;
   hidePassword = true;
 
-  constructor(private fb: FormBuilder, private store: Store<AppState>, private userService: UserService) {
+  constructor(private fb: FormBuilder, private store: Store, private userService: UserService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]

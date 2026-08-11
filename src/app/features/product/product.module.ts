@@ -6,6 +6,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { StoreModule } from '@ngrx/store';
+import { ProductReducer } from './store/product.reducer';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    StoreModule.forFeature("products", ProductReducer),
   ]
 })
 export class ProductModule { }
