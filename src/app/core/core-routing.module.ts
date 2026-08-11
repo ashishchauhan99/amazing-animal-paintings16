@@ -13,7 +13,7 @@ const routes: Routes = [
     {
         path: '',
         component: LayoutComponent, // Layout Shell Component
-        //canActivate: [authGuard],        // Protects ALL child routes at once
+        canActivate: [authGuard],        // Protects ALL child routes at once
         children: [
             {
                 path: 'products',

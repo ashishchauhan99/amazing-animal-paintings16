@@ -1,24 +1,24 @@
 import { createReducer, on } from '@ngrx/store';
 import { Login, LoadUserProfileSuccess, LoadUserProfileFailure } from './user.action';
-import { User } from 'src/app/features/user/model/user';
+import { UserAuthState } from '../model/user.auth.state';
 
-export interface UserAuthState {
-    user: User | null;
-}
 
-export const initialState: UserAuthState = {
-    user: null
+export const initialState:UserAuthState = {
+    user: null,
+    userError: ''
 };
 
 export const AuthReducer = createReducer(
     initialState,
-    on(LoadUserProfileSuccess, (state, { user }) => ({
+    on(LoadUserProfileSuccess, (state, { userAuthState }) => ({
         ...state,
-        user: user // Save user profile in global state
+        user: userAuthState.user,
+        userError: userAuthState.userError
     })),
 
-    on(LoadUserProfileFailure, (state, { error }) => ({
+    on(LoadUserProfileFailure, (state, { userAuthState }) => ({
         ...state,
-        error: error // Save user profile in global state
+        user: userAuthState.user,
+        userError: userAuthState.userError
     })),
 );

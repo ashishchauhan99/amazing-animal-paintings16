@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { UserAuthState } from './user.reducer';
+import { UserAuthState } from '../model/user.auth.state';
 
 // 1. Feature Selector: Matches the key registered in StoreModule / AppState
 export const selectAuthState = createFeatureSelector<UserAuthState>('auth');

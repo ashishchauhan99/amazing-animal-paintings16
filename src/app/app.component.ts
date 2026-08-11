@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
-import { Product } from './features/product/model/product';
-import { selectProducts, selectProductsCount } from './features/product/store/product.selector';
+import { Observable } from 'rxjs';
+import { selectProductsCount } from './features/product/store/product.selector';
 
 
 @Component({

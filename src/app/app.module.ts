@@ -16,17 +16,14 @@ import { CoreModule } from './core/core.module';
 import { CartModule } from './features/cart/cart.module';
 import { ProductModule } from './features/product/product.module';
 
-import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppState } from './app.store';
 import { ProductReducer } from './features/product/store/product.reducer';
-import { AuthReducer } from './features/user/store/user.reducer';
 
 import { HomeModule } from './features/home/home.module';
 import { LoginModule } from './features/login/login.module';
 import { UserModule } from './features/user/user.module';
-import { UserEffects } from './features/user/store/user.effect';
 
 @NgModule({
   declarations: [
@@ -45,9 +42,10 @@ import { UserEffects } from './features/user/store/user.effect';
     MatBadgeModule,
     MatSidenavModule,
     MatListModule,
-    StoreModule.forRoot<AppState>({products: ProductReducer, auth: AuthReducer}),
-    EffectsModule.forRoot([UserEffects]),
-    StoreDevtoolsModule.instrument(),
+    StoreModule.forRoot({products: ProductReducer}),
+    //StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument(),  
     LoginModule,
     CoreModule,
     CoreRoutingModule,
