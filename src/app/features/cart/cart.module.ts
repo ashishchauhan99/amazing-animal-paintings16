@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import { CartRoutingModule } from './cart-routing-modules';
 
 
 
@@ -17,7 +18,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCardModule,
     MatListModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    CartRoutingModule
   ]
 })
 export class CartModule { }

@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { StoreModule } from '@ngrx/store';
 import { ProductReducer } from './store/product.reducer';
+import { ProductRoutingModule } from './product-routing-modules';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ProductReducer } from './store/product.reducer';
     MatInputModule,
     MatSelectModule,
     StoreModule.forFeature("products", ProductReducer),
+    ProductRoutingModule
   ]
 })
 export class ProductModule { }

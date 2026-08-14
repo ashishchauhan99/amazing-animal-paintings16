@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginViewComponent } from './features/login/login-view/login-view.component';
 import { HomeViewComponent } from './features/home/home-view/home-view.component';
+import { alreadyAuthGuard } from './core/already-auth.guard';
 
 
 const routes: Routes = [// 1. Unprotected Full-Screen Page
+  // 1. Login route protected so logged-in users get sent back to 'home'
   {
     path: 'login',
-    component: LoginViewComponent
+    component: LoginViewComponent,
+    canActivate: [alreadyAuthGuard] // 👈 Prevents authenticated users from viewing login
   },
 
   // 2. Delegate all main app paths to CoreModule (Lazy Loaded)
@@ -26,7 +29,7 @@ const routes: Routes = [// 1. Unprotected Full-Screen Page
 
   // 3. Fallback / Wildcard Route  
   { 
-    path: 'bhokal*', 
+    path: '**', 
     redirectTo: 'login' 
   }
    

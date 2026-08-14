@@ -67,8 +67,8 @@ export class UserEffects {
     );
 
     // 2. Navigation Effect: Redirects to /home upon successful profile load
-    /**
-     * loginSuccessRedirect$ = createEffect(
+    
+      loginSuccessRedirect$ = createEffect(
         () =>
             this.actions$.pipe(
                 ofType(LoadUserProfileSuccess),
@@ -79,7 +79,7 @@ export class UserEffects {
             ),
         { dispatch: false } // 👈 REQUIRED: Tells NgRx this effect does not return a new action
     );
-     */
+     
     
 
 }
