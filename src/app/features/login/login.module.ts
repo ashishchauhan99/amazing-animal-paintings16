@@ -11,6 +11,11 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { LoginViewComponent } from './login-view/login-view.component';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { UserEffects } from '../login/store/user.effect';
+import { AuthReducer } from '../login/store/user.reducer';
+
 @NgModule({
   declarations: [
     LoginViewComponent
@@ -22,7 +27,9 @@ import { LoginViewComponent } from './login-view/login-view.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    StoreModule.forFeature('auth', AuthReducer),
+    EffectsModule.forFeature([UserEffects])
   ],
   exports : [
     LoginViewComponent

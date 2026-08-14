@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { UserAuthState } from '../model/user.auth.state';
-import { Credential } from '../../login/model/credential';
+import { UserAuthState } from '../../user/model/user.auth.state';
+import { Credential } from '../model/credential';
 
 // Dispatched by Login Component after receiving auth token
 export const Login = createAction('[Auth] Login', props<{ credential: Credential }>());

@@ -35,7 +35,7 @@ import { LoginModule } from './features/login/login.module';
     LoginModule,
     //CoreModule,
     //CoreRoutingModule,
-    //HomeModule,
+    //HomeModule,a
     //UserModule
     BrowserAnimationsModule
   ],

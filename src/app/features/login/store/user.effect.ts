@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { map, catchError, switchMap, tap } from 'rxjs/operators';
-import { UserService } from '../user.service';
+import { UserService } from '../../user/user.service';
 import { Login, LoadUserProfileSuccess, LoadUserProfileFailure } from './user.action';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,9 @@ export class UserEffects {
         private actions$: Actions,
         private userService: UserService,
         private router: Router
-    ) { }
+    ) { 
+        console.log("++++++++++++ UserEffects constructor")
+    }
 
     login$ = createEffect(() =>
         this.actions$.pipe(

@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Login, LoadUserProfileSuccess, LoadUserProfileFailure } from './user.action';
-import { UserAuthState } from '../model/user.auth.state';
+import { UserAuthState } from '../../user/model/user.auth.state';
 
 
 export const initialState:UserAuthState = {

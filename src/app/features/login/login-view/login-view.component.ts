@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Login } from '../../user/store/user.action';
+import { Login } from '../store/user.action';
 import { UserService } from '../../user/user.service';
 import { User } from '../../user/model/user';
 
