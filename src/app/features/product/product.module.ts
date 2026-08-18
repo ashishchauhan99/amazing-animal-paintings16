@@ -6,8 +6,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-import { StoreModule } from '@ngrx/store';
-import { ProductReducer } from './store/product.reducer';
 import { ProductRoutingModule } from './product-routing-modules';
 
 @NgModule({
@@ -21,7 +19,6 @@ import { ProductRoutingModule } from './product-routing-modules';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    StoreModule.forFeature("products", ProductReducer),
     ProductRoutingModule
   ]
 })

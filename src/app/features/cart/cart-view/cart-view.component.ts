@@ -23,6 +23,10 @@ export class CartViewComponent implements OnInit {
   constructor(private cartService: CartService, private store: Store) { }
 
   ngOnInit(): void {
+    this.store.select(selectProducts).subscribe(products => {
+      console.log('Products from store:', products);
+    });
+
     this.cartService.getCartItems().subscribe(data => {
       this.cartItems = data;
       this.totalPrice = this.getTotalPrice();

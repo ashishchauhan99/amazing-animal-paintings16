@@ -1,6 +1,18 @@
-<div>
-    <p>Header</p>
-</div>
+<mat-toolbar color="warn">
+  <mat-toolbar-row>
+    <a mat-button routerLink="/products">Products</a>
+    <a mat-button routerLink="/cart">Cart</a>
+    <span class="toolbar-spacer"></span>
+    <button mat-icon-button routerLink="/cart" aria-label="Shopping Cart">
+      <mat-icon [matBadge]="productCount$ | async" 
+                matBadgeColor="warn" 
+                [matBadgeHidden]="(productCount$ | async) === 0"
+                aria-hidden="false">
+        shopping_cart
+      </mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <div>
     <p>Sidebar</p>
