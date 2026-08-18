@@ -7,8 +7,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu'
 import { ProductReducer } from '../features/product/store/product.reducer';
 import { StoreModule } from '@ngrx/store';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { StoreModule } from '@ngrx/store';
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
+    MatMenuModule,
     StoreModule.forFeature("products", ProductReducer)
 ]
 })

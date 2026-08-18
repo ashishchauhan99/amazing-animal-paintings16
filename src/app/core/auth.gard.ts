@@ -14,11 +14,7 @@ export const authGuard: CanActivateFn = () => {
       if (auth && auth.user) {
         console.log("-----------")
         return true;
-      }//else{
-        //console.log("+++++++++++++" + auth.user)
-        //return true;
-      //}
-
+      }
       // If user profile is missing, redirect to login page
       return router.createUrlTree(['/login']);
     })

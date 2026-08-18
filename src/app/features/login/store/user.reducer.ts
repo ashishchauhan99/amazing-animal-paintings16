@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
-import { Login, LoadUserProfileSuccess, LoadUserProfileFailure } from './user.action';
+import { Login, LoadUserProfileSuccess, LoadUserProfileFailure, Logout } from './user.action';
 import { UserAuthState } from '../../user/model/user.auth.state';
 
 
-export const initialState:UserAuthState = {
+export const initialState: UserAuthState = {
     user: null,
     userError: ''
 };
@@ -21,4 +21,10 @@ export const AuthReducer = createReducer(
         user: userAuthState.user,
         userError: userAuthState.userError
     })),
+
+    // Reset user auth state on Logout
+    on(Logout, () => ({
+        user: null,
+        userError: ''
+    }))
 );

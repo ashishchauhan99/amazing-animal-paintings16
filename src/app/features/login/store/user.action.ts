@@ -17,3 +17,5 @@ export const LoadUserProfileFailure = createAction(
   '[User API] Load User Profile failure',
   props<{ userAuthState: UserAuthState }>()
 );
+
+export const Logout = createAction('[Auth] Logout');
